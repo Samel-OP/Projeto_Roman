@@ -1,4 +1,4 @@
-# Projeto Roman
+# Projeto Roman - Gestão de projetos 📚
 - O Projeto Roman é uma plataforma parar organização/gestão de ideias de projetos escolares.
 - Após realizar o login, professores cadastrados podem cadastrar ideias de projetos que podem ser utilizados nas escolas.
 
