@@ -1,5 +1,5 @@
 # Projeto Roman
-- O propósito do Projeto Roman é organização de ideias de projetos escolares.
+- O Projeto Roman é uma plataforma parar organização/gestão de ideias de projetos escolares.
 - Após realizar o login, professores cadastrados podem cadastrar ideias de projetos que podem ser utilizados nas escolas.
 
 ## Integrantes da equipe
@@ -20,3 +20,11 @@
 ### Mobile: 
 - <img align="center" alt="logo-React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"> - ReactNative
 - <img align="center" alt="logo_VS_code" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/vscode/vscode-original.svg"> - Visual Studio Code
+
+## Como executar:
+O primeiro passo é clonar esse repositório na sua máquina. Dê um git clone em uma pasta do seu computador e puxe todo o conteúdo do repositório:
+![image](https://user-images.githubusercontent.com/82414372/143623940-4cab0d19-6b2f-4b9c-ad39-14c0c0c4f6e2.png)
+![image](https://user-images.githubusercontent.com/82414372/143623981-a40860e7-9cd2-4432-922e-f78ce833b8d4.png)
+
+
+## Como utilizar:
