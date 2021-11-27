@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai.roman.webAPI</name>
+    </assembly>
+    <members>
+        <member name="M:senai.roman.webAPI.Controllers.LoginController.Login(senai.roman.webAPI.ViewModels.LoginViewModel)">
+            <summary>
+            Realiza o login
+            </summary>
+            <param name="login">Objeto contendo as informações para realizar o login</param>
+            <returns></returns>
+        </member>
+        <member name="M:senai.roman.webAPI.Controllers.ProjetoController.ListarTodos">
+            <summary>
+            Lista todos os projetos
+            </summary>
+            <returns>Uma lista de projetos</returns>
+        </member>
+        <member name="M:senai.roman.webAPI.Controllers.ProjetoController.Cadastrar(senai.roman.webAPI.Domains.Projeto)">
+            <summary>
+            Cadastra um novo projeto
+            </summary>
+            <param name="novoProjeto">Objeto contendo o novo projeto</param>
+            <returns></returns>
+        </member>
+        <member name="M:senai.roman.webAPI.Interfaces.IProjetoRepository.Cadastrar(senai.roman.webAPI.Domains.Projeto)">
+            <summary>
+            Cadastra um novo projeto
+            </summary>
+            <param name="novoProjeto">Objeto contendo as informações o novo projeto</param>
+        </member>
+        <member name="M:senai.roman.webAPI.Interfaces.IProjetoRepository.ListarTodos">
+            <summary>
+            Lista todos os projetos
+            </summary>
+            <returns>Uma lista de projetos</returns>
+        </member>
+        <member name="M:senai.roman.webAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="email">E-mail do usuário</param>
+            <param name="senha">Senha do usuário</param>
+            <returns>Um objeto do tipo Usuario que foi encontrado</returns>
+        </member>
+        <member name="M:senai.roman.webAPI.Interfaces.IUsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um usuário pelo seu id
+            </summary>
+            <param name="id">id do usuário que será buscado</param>
+            <returns>O usuário buscado</returns>
+        </member>
+        <member name="T:senai.roman.webAPI.ViewModels.LoginViewModel">
+            <summary>
+            Classe responsável pelo modelo de Login
+            </summary>
+        </member>
+    </members>
+</doc>

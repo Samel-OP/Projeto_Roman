@@ -9,7 +9,7 @@ namespace senai.roman.webAPI.Interfaces
     interface IUsuarioRepository
     {
         /// <summary>
-        /// Valida i usuário
+        /// Valida o usuário
         /// </summary>
         /// <param name="email">E-mail do usuário</param>
         /// <param name="senha">Senha do usuário</param>

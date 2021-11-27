@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\47429258824\\Downloads\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj": {}
+    "C:\\Users\\samue\\Desktop\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\47429258824\\Downloads\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj": {
+    "C:\\Users\\samue\\Desktop\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\47429258824\\Downloads\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj",
+        "projectUniqueName": "C:\\Users\\samue\\Desktop\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj",
         "projectName": "senai.roman.webAPI",
-        "projectPath": "C:\\Users\\47429258824\\Downloads\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj",
-        "packagesPath": "C:\\Users\\47429258824\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\47429258824\\Downloads\\senai.roman.webAPI\\senai.roman.webAPI\\obj\\",
+        "projectPath": "C:\\Users\\samue\\Desktop\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj",
+        "packagesPath": "C:\\Users\\samue\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\samue\\Desktop\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\47429258824\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\samue\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
