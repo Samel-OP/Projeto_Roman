@@ -1,4 +1,5 @@
-﻿using senai.roman.webAPI.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using senai.roman.webAPI.Context;
 using senai.roman.webAPI.Domains;
 using senai.roman.webAPI.Interfaces;
 using System;
@@ -21,7 +22,10 @@ namespace senai.roman.webAPI.Repositories
 
         public List<Projeto> ListarTodos()
         {
-            return ctx.Projetos.ToList();
+            return ctx.Projetos
+                .Include("IdUsuarioNavigation")
+                .Include(c => c.IdTemaNavigation)
+                .ToList();
         }
     }
 }
