@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\41557163804\\Desktop\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj": {}
+    "C:\\Users\\lucas\\OneDrive\\Documentos\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\41557163804\\Desktop\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj": {
+    "C:\\Users\\lucas\\OneDrive\\Documentos\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\41557163804\\Desktop\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj",
+        "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Documentos\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj",
         "projectName": "senai.roman.webAPI",
-        "projectPath": "C:\\Users\\41557163804\\Desktop\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj",
-        "packagesPath": "C:\\Users\\41557163804\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\41557163804\\Desktop\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\obj\\",
+        "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\senai.roman.webAPI.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\Projeto_Roman\\Backend\\senai.roman.webAPI\\senai.roman.webAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\41557163804\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
