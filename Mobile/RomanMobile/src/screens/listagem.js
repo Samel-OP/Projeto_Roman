@@ -24,7 +24,7 @@ export default class Listagem extends Component {
     
     buscarProjetos = async () => {
         try {
-            const token = await AsyncStorage.getItem('token');
+            const token = await AsyncStorage.getItem('userToken');
             const resposta = await api('/projeto'
             );
             

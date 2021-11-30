@@ -25,6 +25,28 @@
 O primeiro passo é clonar esse repositório na sua máquina. Dê um git clone em uma pasta do seu computador e puxe todo o conteúdo do repositório:
 ![image](https://user-images.githubusercontent.com/82414372/143623940-4cab0d19-6b2f-4b9c-ad39-14c0c0c4f6e2.png)
 ![image](https://user-images.githubusercontent.com/82414372/143623981-a40860e7-9cd2-4432-922e-f78ce833b8d4.png)
+![image](https://user-images.githubusercontent.com/82414372/144103088-8ee91d7e-a615-4673-9709-c9b06fca20a1.png)
 
+- Abra o ssms no seu computador e abra os scripts localizados na pasta 'BD';
+![image](https://user-images.githubusercontent.com/82414372/144103377-3bc860ea-cd2c-4f6c-add5-30be470a302b.png)
+
+- Crie a database e execute os 3 scripts para conferir se está tudo funcionando;
+![image](https://user-images.githubusercontent.com/82414372/144103509-73b8b674-a92f-4d89-ab49-5a055b138f70.png)
+![image](https://user-images.githubusercontent.com/82414372/144103526-2e6e647e-198c-4b96-884d-5483466816f1.png)
+
+- Após o banco responder, abra o VS Code na solução que se encontra na pasta 'Back-End';
+![image](https://user-images.githubusercontent.com/82414372/144103639-74e1916c-ce81-430a-a068-30f9382170ae.png)
+
+- Vá direto para a pasta de contexto e troque a string de conexão para a que conecte ao seu banco de dados (incluindo login e senha);
+
+- Dentro do arquivo 'launchSettings.json', troque o valor 'localhost' de "applicationUrl": "http://localhost:5000", para o endreço do seu IP.
+
+- Para não sobrecarregar o processamento, feche a aplicação e a partir da barra de endereço da pasta onde se encontram os aquivos, abra o cmd e digite 'dotnet run';
+
+- Para abrir o aplicativo mobile, abra o cmd na pasta 'ProjetoRomanMobile' e de um 'npm i' para instalar todos os módulos utilizados na aplicação;
+
+- Abra o arquivo no vsCode para trocar a barra de endereço no arquivo 'api', dentro da pasta 'services', dentro de 'assets' para o seu endereço de IP;
+
+- Em seguida, digite 'npm react-native run-android' para rodar a aplicação;
 
 ## Como utilizar:
