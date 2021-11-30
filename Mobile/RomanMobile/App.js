@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Login from './src/screens/login';
-import Listagem from './src/screens/listagem';
+import Main from './src/screens/main';
 
 const AuthStack = createStackNavigator();
 
@@ -24,7 +24,7 @@ function App() {
         }}
       >
         <AuthStack.Screen name="Login" component={Login}></AuthStack.Screen>
-        <AuthStack.Screen name="Listagem" component={Listagem}></AuthStack.Screen>
+        <AuthStack.Screen name="Main" component={Main}></AuthStack.Screen>
       </AuthStack.Navigator>
     </NavigationContainer>
   );
