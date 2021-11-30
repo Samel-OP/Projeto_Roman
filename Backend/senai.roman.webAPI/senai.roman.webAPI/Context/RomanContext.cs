@@ -28,9 +28,9 @@ namespace senai.roman.webAPI.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=NOTE0113A2\\SQLEXPRESS17; initial catalog=PROJETO_ROMAN; user Id=sa; pwd=senai@132;");
-                // optionsBuilder.UseSqlServer("Data Source=DESKTOP-20INV7D\\SQLEXPRESS; initial catalog=PROJETO_ROMAN; user Id=sa; pwd=SenaiSamuel1;");
-                // SoptionsBuilder.UseSqlServer("Data Source=NOTE0113I5\\SQLEXPRESS; initial catalog=PROJETO_ROMAN; user Id=sa; pwd=Senai@132;");
+                // optionsBuilder.UseSqlServer("Data Source=NOTE0113A2\\SQLEXPRESS17; initial catalog=PROJETO_ROMAN; user Id=sa; pwd=senai@132;");
+                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-20INV7D\\SQLEXPRESS; initial catalog=PROJETO_ROMAN; user Id=sa; pwd=SenaiSamuel1;");
+                // optionsBuilder.UseSqlServer("Data Source=NOTE0113I5\\SQLEXPRESS; initial catalog=PROJETO_ROMAN; user Id=sa; pwd=Senai@132;");
             }
         }
 

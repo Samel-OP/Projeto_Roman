@@ -52,6 +52,14 @@ export default class Listagem extends Component {
                     style={styles.imgHeader}
                 />
 
+                //<View>
+                     //<TouchableOpacity
+                         //style={}
+                         //onPress={}>
+                         //<Text style={}>Sugerir projeto</Text>
+                     //</TouchableOpacity>
+                //</View>
+
                 <View>
                     <FlatList
                         data={this.state.listaProjetos}
