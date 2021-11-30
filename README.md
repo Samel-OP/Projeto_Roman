@@ -38,15 +38,19 @@ O primeiro passo é clonar esse repositório na sua máquina. Dê um git clone e
 ![image](https://user-images.githubusercontent.com/82414372/144103639-74e1916c-ce81-430a-a068-30f9382170ae.png)
 
 - Vá direto para a pasta de contexto e troque a string de conexão para a que conecte ao seu banco de dados (incluindo login e senha);
+![image](https://user-images.githubusercontent.com/82414372/144120226-71d9adb3-9dfb-4537-95fa-4cba9ed7f9d7.png)
 
 - Dentro do arquivo 'launchSettings.json', troque o valor 'localhost' de "applicationUrl": "http://localhost:5000", para o endreço do seu IP.
 
 - Para não sobrecarregar o processamento, feche a aplicação e a partir da barra de endereço da pasta onde se encontram os aquivos, abra o cmd e digite 'dotnet run';
+![image](https://user-images.githubusercontent.com/82414372/144120370-0ab582f7-1d9c-4ff6-a1c8-bb5db7a2f74a.png)
+![image](https://user-images.githubusercontent.com/82414372/144120452-84cab445-0e45-4a0e-9101-41fbc218efeb.png)
+
+- Abra o arquivo 'ProjetoRomanMobile' no vsCode para trocar a barra de endereço no arquivo 'api', dentro da pasta 'services', dentro de 'assets' para o seu endereço de IP;
+![image](https://user-images.githubusercontent.com/82414372/144120578-81e9896f-9adb-43fc-bba6-b9df7436408d.png)
 
 - Para abrir o aplicativo mobile, abra o cmd na pasta 'ProjetoRomanMobile' e de um 'npm i' para instalar todos os módulos utilizados na aplicação;
 
-- Abra o arquivo no vsCode para trocar a barra de endereço no arquivo 'api', dentro da pasta 'services', dentro de 'assets' para o seu endereço de IP;
-
-- Em seguida, digite 'npm react-native run-android' para rodar a aplicação;
+- Em seguida digite 'npm react-native run-android' para rodar a aplicação.
 
 ## Como utilizar:
