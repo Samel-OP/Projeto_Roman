@@ -19,13 +19,13 @@ export default class Perfil extends Component {
             nomeUsuario: '',
         };
     }
-    
+
     buscarProjetos = async () => {
         try {
             const token = await AsyncStorage.getItem('userToken');
             const resposta = await api('/projeto'
             );
-            
+
             if (resposta.status == 200) {
                 const dadosProjeto = resposta.data;
                 this.setState({ nomeUsuario: dadosProjeto })
@@ -35,6 +35,16 @@ export default class Perfil extends Component {
             console.warn(error);
         }
     }
+
+    realizarLogout = async () => {
+
+        try {
+            await AsyncStorage.removeItem('userToken');
+            this.props.navigation.navigate('Login');
+        } catch (error) {
+            console.warn(error);
+        }
+    };
 
     componentDidMount() {
         this.buscarProjetos();
@@ -61,7 +71,14 @@ export default class Perfil extends Component {
                         Oi
                     </Text>
                 </View>
+                <TouchableOpacity
+                    style={styles.btnLogout}
+                    onPress={this.realizarLogout}>
+                    <Text style={styles.btnLogoutText}>Sair</Text>
+                </TouchableOpacity>
             </View >
+
+            
 
         );
     }
@@ -75,5 +92,24 @@ const styles = StyleSheet.create({
     imgHeader: {
         marginTop: 10,
         marginBottom: 10,
+    },
+
+    btnLogout:{
+        justifyContent:'center',
+          alignItems:'center',
+          backgroundColor:'#9D2FFA',
+          width:200,
+          height: 55,
+          borderRadius:20,
+          marginTop:50,
+          marginBottom:30
+    },
+
+    btnLogoutText:{
+        fontSize:23,
+          color:'#fff'
     }
+
+
+
 })

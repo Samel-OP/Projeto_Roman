@@ -35,7 +35,7 @@ export default class Login extends Component {
         await AsyncStorage.setItem('userToken', token);
 
         if (resposta.status == 200) {
-            this.props.navigation.navigate('Listagem');
+            this.props.navigation.navigate('Main');
         }
 
         console.warn(token);
