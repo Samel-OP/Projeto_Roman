@@ -17,8 +17,8 @@ export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
-            senha: '',
+            email: 'admin@email.com',
+            senha: 'admin123',
         };
     }
 
@@ -35,7 +35,7 @@ export default class Login extends Component {
         await AsyncStorage.setItem('userToken', token);
 
         if (resposta.status == 200) {
-            this.props.navigation.navigate('Listagem');
+            this.props.navigation.navigate('Main');
         }
 
         console.warn(token);

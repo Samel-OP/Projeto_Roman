@@ -18,8 +18,8 @@ export default class Main extends Component {
         return (
             <View style={styles.main}>
                 <Tab.Navigator>
-                    <Tab.Screen name="Perfil" component={Perfil}></Tab.Screen>
                     <Tab.Screen name="Listagem" component={Listagem}></Tab.Screen>
+                    <Tab.Screen name="Perfil" component={Perfil}></Tab.Screen>
                 </Tab.Navigator>
             </View>
         )
