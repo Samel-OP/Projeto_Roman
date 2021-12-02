@@ -7,6 +7,7 @@ import {
     View,
     Modal,
     Pressable,
+    SafeAreaView,
 } from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -80,41 +81,53 @@ export default class Listagem extends Component {
 
                 <View>
                     <Modal
+                        animationType="fade"
+                        transparent={true}
                         visible={modalVisivel}
                         onRequestClose={() => {
                             this.setModalVisivel(!modalVisivel)
                         }}>
-                        <View
-                        style={styles.modalView}>
-                            <Text style={styles.textModal}>Título: </Text>
-                            <TextInput style={styles.textModalInput}></TextInput>
-                            <Text style={styles.textModal}>Descrição: </Text>
-                            <TextInput style={styles.textModalInput}></TextInput>
-                            <Text style={styles.textModal}>Tema: </Text>
-                            <View style={styles.containerSelecionar}>
-                                <RNPickerSelect style={styles.estiloSelect}
-                                    placeholder={{
-                                        label: "Selecione um tema",
-                                        value: null,
-                                    }}
+                        <View style={styles.modalCentralizado}>
+                            <View
+                                style={styles.modalView}>
+                                <Text style={styles.textModal}>Título: </Text>
+                                <TextInput style={styles.textModalInput}></TextInput>
+                                <Text style={styles.textModal}>Descrição: </Text>
+                                <TextInput style={styles.textModalInputDescricao}></TextInput>
+                                <Text style={styles.textModal}>Tema: </Text>
+                                <View style={styles.containerSelecionar}>
+                                    <View>
+                                        <RNPickerSelect style={styles.estiloSelect}
+                                            placeholder={{
+                                                label: "Selecione um tema",
+                                                value: null,
+                                            }}
 
-                                    onValueChange={idTema => this.setState({ idTema })}
-                                    items={[
-                                        { key: 1, label: 'Gestão', value: 1 },
-                                        { key: 2, label: 'HQs', value: 2 },
-                                        { key: 3, label: 'Games', value: 3 },
-                                        { key: 4, label: 'Tecnologia', value: 4 },
-                                        { key: 5, label: 'ReactNative', value: 5 },
-                                        { key: 6, label: 'Fisica Quântica', value: 6 },
-                                    ]}
+                                            onValueChange={idTema => this.setState({ idTema })}
+                                            items={[
+                                                { key: 1, label: 'Gestão', value: 1 },
+                                                { key: 2, label: 'HQs', value: 2 },
+                                                { key: 3, label: 'Games', value: 3 },
+                                                { key: 4, label: 'Tecnologia', value: 4 },
+                                                { key: 5, label: 'ReactNative', value: 5 },
+                                                { key: 6, label: 'Fisica Quântica', value: 6 },
+                                            ]}
 
-                                />
+                                        />
+                                    </View>
+                                    <Pressable
+                                        style={styles.btnEnviarModel}
+                                        onPress={() => cadastrarProjeto()}>
+                                        <Text style={styles.enviarTextModal}>Enviar</Text>
+                                    </Pressable>
+                                </View>
                             </View>
+                            <Pressable
+                                style={styles.btnSairModal}
+                                onPress={() => this.setModalVisivel(!modalVisivel)}>
+                                <Text style={styles.fecharTextModal}>Fechar</Text>
+                            </Pressable>
                         </View>
-                        {/* <Pressable
-                            onPress={() => this.setModalVisivel(!modalVisivel)}>
-                            <Text>Fechar Modal</Text>
-                        </Pressable> */}
                     </Modal>
                 </View>
                 <TouchableOpacity
@@ -137,12 +150,14 @@ export default class Listagem extends Component {
     }
 
     renderItem = ({ item }) => (
-        <ScrollView style={styles.boxConteudo}>
-            <Text style={styles.boxTextoNomeUsuario}>{item.idUsuarioNavigation.nome}</Text>
-            <Text style={styles.boxTexto}>{item.nomeProjeto}</Text>
-            <Text style={styles.boxTextoDescricao}>Descrição: {item.descricao}</Text>
-            <Text style={styles.boxTextoTema}>{item.idTemaNavigation.nomeTema}</Text>
-        </ScrollView>
+        <SafeAreaView>
+            <ScrollView style={styles.boxConteudo}>
+                <Text style={styles.boxTextoNomeUsuario}>{item.idUsuarioNavigation.nome}</Text>
+                <Text style={styles.boxTexto}>{item.nomeProjeto}</Text>
+                <Text style={styles.boxTextoDescricao}>Descrição: {item.descricao}</Text>
+                <Text style={styles.boxTextoTema}>{item.idTemaNavigation.nomeTema}</Text>
+            </ScrollView>
+        </SafeAreaView>
     )
 
 }
@@ -156,17 +171,51 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
     },
+    modalCentralizado: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: 'rgba(0,0,0,0.7)',
+    },
     modalView: {
+        width: 350,
+        height: 340,
         backgroundColor: '#FFDA2D',
+        borderRadius: 30,
+        justifyContent: 'center',
+        paddingBottom: 20
     },
     textModal: {
         fontFamily: 'RopaSans-Regular',
         fontSize: 20,
         color: 'black',
+        marginTop: 20,
+        marginLeft: 25,
+    },
+    containerSelecionar: {
+        width: 125,
+        height: 35,
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        borderRadius: 30,
+        marginLeft: 20,
     },
     textModalInput: {
+        width: 300,
+        height: 40,
         backgroundColor: 'white',
+        fontSize: 15,
         borderRadius: 30,
+        marginLeft: 20,
+    },
+    textModalInputDescricao: {
+        width: 300,
+        height: 100,
+        backgroundColor: 'white',
+        borderRadius: 15,
+        marginLeft: 20,
+        flex: 1, 
+        flexWrap: 'wrap'
     },
     btnSugerir: {
         backgroundColor: '#6918AD',
@@ -192,6 +241,36 @@ const styles = StyleSheet.create({
         backgroundColor: "blue",
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    btnEnviarModel: {
+        width: 125,
+        height: 35,
+        backgroundColor: '#48A7FA',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 30,
+        marginLeft: 170,
+    },
+    enviarTextModal: {
+        color: 'white',
+        fontSize: 20,
+        fontWeight: '700',
+        fontFamily: 'RopaSans-Regular',
+    },
+    btnSairModal: {
+        width: 110,
+        height: 30,
+        backgroundColor: "red",
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 10,
+        marginTop: 30
+    },
+    fecharTextModal: {
+        color: 'white',
+        fontSize: 15,
+        fontWeight: '700',
+        fontFamily: 'RopaSans-Regular',
     },
     boxConteudo: {
         backgroundColor: '#9D2FFA',

@@ -31,5 +31,5 @@ const styles = StyleSheet.create({
     main: {
         flex: 1,
         backgroundColor: '#48A7FA'
-    }
+    },
 });
