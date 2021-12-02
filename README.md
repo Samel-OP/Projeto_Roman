@@ -54,3 +54,10 @@ O primeiro passo é clonar esse repositório na sua máquina. Dê um git clone e
 - Em seguida digite 'npm react-native run-android' para rodar a aplicação.
 
 ## Como utilizar:
+- Após iniciar o aplicativo, insira seu email e senha cadastrados no banco e faça login;
+- Na tela inicial, você terá uma listagem com todos os projetos cadastrados;
+- Caso queira fazer um novo cadastro, clique em "sugerir projeto" na parte de cima da tela;
+- Esse botão abrirá uma mini tela, nela você conseguirá colocar um título, a descrição e um tema;
+- Clique em "Enviar" para cadastrar sua sugestão no banco;
+- Você poderá navegar para uma segunda tela através do footer;
+- Na tela de perfil você poderá ver seu nome e sua senha, e um botão que fará você deslogar do sistema :)
