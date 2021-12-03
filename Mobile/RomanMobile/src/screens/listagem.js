@@ -10,12 +10,15 @@ import {
     SafeAreaView,
 } from 'react-native';
 
+import PickerModalListar from './index.tsx';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import RNPickerSelect from 'react-native-picker-select';
+// import RNPickerSelect from 'react-native-picker-select';
 
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import api from '../services/api';
 import { FlatList } from 'react-native-gesture-handler';
+// import Picker from './picker';
+// import PickerModal from 'react-native-picker-modal-view';
 
 
 export default class Listagem extends Component {
@@ -27,6 +30,7 @@ export default class Listagem extends Component {
             descricao: '',
             idTema: 0,
             listaProjetos: [],
+            selectedItem: {},
         };
     }
 
@@ -71,6 +75,7 @@ export default class Listagem extends Component {
     }
 
     render() {
+        const { selectedItem } = this.state;
         const { modalVisivel } = this.state
         return (
             <View style={styles.main}>
@@ -97,23 +102,7 @@ export default class Listagem extends Component {
                                 <Text style={styles.textModal}>Tema: </Text>
                                 <View style={styles.containerSelecionar}>
                                     <View>
-                                        <RNPickerSelect style={styles.estiloSelect}
-                                            placeholder={{
-                                                label: "Selecione um tema",
-                                                value: null,
-                                            }}
-
-                                            onValueChange={idTema => this.setState({ idTema })}
-                                            items={[
-                                                { key: 1, label: 'Gestão', value: 1 },
-                                                { key: 2, label: 'HQs', value: 2 },
-                                                { key: 3, label: 'Games', value: 3 },
-                                                { key: 4, label: 'Tecnologia', value: 4 },
-                                                { key: 5, label: 'ReactNative', value: 5 },
-                                                { key: 6, label: 'Fisica Quântica', value: 6 },
-                                            ]}
-
-                                        />
+                                        <PickerModalListar />
                                     </View>
                                     <Pressable
                                         style={styles.btnEnviarModel}
@@ -195,10 +184,10 @@ const styles = StyleSheet.create({
     containerSelecionar: {
         width: 125,
         height: 35,
-        backgroundColor: 'white',
         flexDirection: 'row',
         borderRadius: 30,
         marginLeft: 20,
+        marginBottom: 50
     },
     textModalInput: {
         width: 300,
@@ -214,7 +203,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 15,
         marginLeft: 20,
-        flex: 1, 
+        flex: 1,
         flexWrap: 'wrap'
     },
     btnSugerir: {
@@ -249,7 +238,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 30,
-        marginLeft: 170,
+        marginLeft: 50,
+        marginTop: 15
     },
     enviarTextModal: {
         color: 'white',

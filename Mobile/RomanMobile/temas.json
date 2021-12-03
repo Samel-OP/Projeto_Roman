@@ -1,0 +1,38 @@
+[
+    {
+        "Name": "Gestão",
+		"Value": "Gestão",
+        "Code": "GT",
+		"Id": 1
+    },
+    {
+        "Name": "HQs",
+		"Value": "HQs",
+        "Code": "HQ",
+		"Id": 2
+    },
+    {
+        "Name": "Games",
+		"Value": "Games",
+        "Code": "GM",
+		"Id": 3
+    },
+    {
+        "Name": "Tecnologia",
+		"Value": "Tecnologia",
+        "Code": "TC",
+		"Id": 4
+    },
+    {
+        "Name": "ReactNative",
+		"Value": "ReactNative",
+        "Code": "RN",
+		"Id": 5
+    },
+    {
+        "Name": "Fisica Quântica",
+		"Value": "Fisica Quântica",
+        "Code": "FQ",
+		"Id": 6
+    }
+]
