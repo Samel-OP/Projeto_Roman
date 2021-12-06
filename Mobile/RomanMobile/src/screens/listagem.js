@@ -3,11 +3,9 @@ import {
     Image,
     StyleSheet,
     Text,
-    ScrollView,
     View,
     Modal,
     Pressable,
-    SafeAreaView,
 } from 'react-native';
 
 import PickerModalListar from './index.tsx';
@@ -30,14 +28,18 @@ export default class Listagem extends Component {
             descricao: '',
             idTema: 0,
             listaProjetos: [],
-            selectedItem: {},
         };
     }
 
     buscarProjetos = async () => {
         try {
             const token = await AsyncStorage.getItem('userToken');
-            const resposta = await api('/projeto'
+            const resposta = await api('/projeto',
+                {
+                    headers: {
+                        Authorization: 'Bearer ' + token,
+                    }
+                },
             );
 
             if (resposta.status == 200) {
@@ -53,13 +55,24 @@ export default class Listagem extends Component {
     cadastrarProjeto = async () => {
         try {
             const token = await AsyncStorage.getItem('userToken');
-            const resposta = await api.post('/projeto');
+            const id = await AsyncStorage.getItem('select-Modal');
+            const resposta = api.post('/projeto',
+                {
+                    idTema: id,
+                    nomeProjeto: this.state.nomeProjeto,
+                    descricao: this.state.descricao
+                },
+                {
+                    headers: {
+                        Authorization: 'Bearer ' + token,
+                    }
+                },
+            );
+
+            console.warn(resposta.data);
 
             if (resposta.status == 201) {
-                const projetoDados = resposta.data;
-                this.setState({ nomeProjeto: projetoDados.nomeProjeto }),
-                    this.setState({ descricao: projetoDados.descricao }),
-                    this.setState({ idTema: projetoDados.idTema })
+                console.warn("cadastrou!");
             }
         } catch (error) {
             console.warn(error);
@@ -70,13 +83,11 @@ export default class Listagem extends Component {
         this.setState({ modalVisivel: visible })
     }
 
-    componentDidMount() {
+    componentDidMount() { 
         this.buscarProjetos();
     }
 
     render() {
-        const { selectedItem } = this.state;
-        const { modalVisivel } = this.state
         return (
             <View style={styles.main}>
                 <Image
@@ -88,17 +99,17 @@ export default class Listagem extends Component {
                     <Modal
                         animationType="fade"
                         transparent={true}
-                        visible={modalVisivel}
+                        visible={this.state.modalVisivel}
                         onRequestClose={() => {
-                            this.setModalVisivel(!modalVisivel)
+                            this.setModalVisivel(!this.state.modalVisivel)
                         }}>
                         <View style={styles.modalCentralizado}>
                             <View
                                 style={styles.modalView}>
                                 <Text style={styles.textModal}>Título: </Text>
-                                <TextInput style={styles.textModalInput}></TextInput>
+                                <TextInput onChangeText={nomeProjeto => this.setState({ nomeProjeto })} style={styles.textModalInput}></TextInput>
                                 <Text style={styles.textModal}>Descrição: </Text>
-                                <TextInput style={styles.textModalInputDescricao}></TextInput>
+                                <TextInput onChangeText={descricao => this.setState({ descricao })} style={styles.textModalInputDescricao}></TextInput>
                                 <Text style={styles.textModal}>Tema: </Text>
                                 <View style={styles.containerSelecionar}>
                                     <View>
@@ -106,14 +117,14 @@ export default class Listagem extends Component {
                                     </View>
                                     <Pressable
                                         style={styles.btnEnviarModel}
-                                        onPress={() => cadastrarProjeto()}>
+                                        onPress={() => this.cadastrarProjeto()}>
                                         <Text style={styles.enviarTextModal}>Enviar</Text>
                                     </Pressable>
                                 </View>
                             </View>
                             <Pressable
                                 style={styles.btnSairModal}
-                                onPress={() => this.setModalVisivel(!modalVisivel)}>
+                                onPress={() => this.setModalVisivel(!this.state.modalVisivel)}>
                                 <Text style={styles.fecharTextModal}>Fechar</Text>
                             </Pressable>
                         </View>
@@ -139,14 +150,14 @@ export default class Listagem extends Component {
     }
 
     renderItem = ({ item }) => (
-        <SafeAreaView>
-            <ScrollView style={styles.boxConteudo}>
-                <Text style={styles.boxTextoNomeUsuario}>{item.idUsuarioNavigation.nome}</Text>
-                <Text style={styles.boxTexto}>{item.nomeProjeto}</Text>
-                <Text style={styles.boxTextoDescricao}>Descrição: {item.descricao}</Text>
-                <Text style={styles.boxTextoTema}>{item.idTemaNavigation.nomeTema}</Text>
-            </ScrollView>
-        </SafeAreaView>
+        <View style={styles.boxConteudo}>
+            <Text style={styles.boxTextoNomeUsuario}>{item.idUsuarioNavigation.nome}</Text>
+            <Text style={styles.boxTexto}>{item.nomeProjeto}</Text>
+            <Text style={styles.boxTextoDescricao}>Descrição: {item.descricao}</Text>
+            <View style={styles.boxTextoTema}>
+                <Text style={styles.textTema}>{item.idTemaNavigation.nomeTema}</Text>
+            </View>
+        </View>
     )
 
 }
@@ -299,10 +310,17 @@ const styles = StyleSheet.create({
         fontFamily: 'RopaSans-Regular',
         fontSize: 15,
         padding: 5,
-        width: 60,
+        width: 100,
         height: 30,
         marginTop: 8,
         marginLeft: 15,
         borderRadius: 30,
+        justifyContent:'center',
+        alignItems: 'center'
+    },
+    textTema: {
+        fontFamily: 'RopaSans-Regular',
+        fontSize: 15,
+        color: 'black'
     }
 })

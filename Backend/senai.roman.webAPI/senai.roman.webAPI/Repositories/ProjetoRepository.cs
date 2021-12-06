@@ -13,9 +13,17 @@ namespace senai.roman.webAPI.Repositories
     {
         RomanContext ctx = new RomanContext();
 
-        public void Cadastrar(Projeto novoProjeto)
+        public void Cadastrar(Projeto novoProjeto, int idUsuario)
         {
-            ctx.Projetos.Add(novoProjeto);
+            Projeto projeto = new Projeto()
+            {
+                IdTema = novoProjeto.IdTema,
+                IdUsuario = idUsuario,
+                NomeProjeto = novoProjeto.NomeProjeto,
+                Descricao = novoProjeto.Descricao,
+            };
+
+            ctx.Projetos.Add(projeto);
 
             ctx.SaveChanges();
         }

@@ -24,7 +24,7 @@
             <param name="novoProjeto">Objeto contendo o novo projeto</param>
             <returns></returns>
         </member>
-        <member name="M:senai.roman.webAPI.Interfaces.IProjetoRepository.Cadastrar(senai.roman.webAPI.Domains.Projeto)">
+        <member name="M:senai.roman.webAPI.Interfaces.IProjetoRepository.Cadastrar(senai.roman.webAPI.Domains.Projeto,System.Int32)">
             <summary>
             Cadastra um novo projeto
             </summary>

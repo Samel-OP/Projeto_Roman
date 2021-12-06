@@ -12,7 +12,7 @@ namespace senai.roman.webAPI.Interfaces
         /// Cadastra um novo projeto
         /// </summary>
         /// <param name="novoProjeto">Objeto contendo as informações o novo projeto</param>
-        void Cadastrar(Projeto novoProjeto);
+        void Cadastrar(Projeto novoProjeto, int idUsuario);
 
         /// <summary>
         /// Lista todos os projetos
