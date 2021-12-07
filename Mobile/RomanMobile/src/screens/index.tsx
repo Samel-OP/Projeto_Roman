@@ -34,7 +34,9 @@ export default class PickerModalListar extends React.Component<{}, { selectedIte
                 requireSelection={false} 
                 showAlphabeticalIndex={false} 
                 removeClippedSubviews={false} 
-                disabled={false}>
+                disabled={false}
+                // keyExtractor={item => item.idProjeto}
+                >
                 </PickerModal>
             </View>
         )
@@ -47,7 +49,7 @@ export default class PickerModalListar extends React.Component<{}, { selectedIte
 	private async onSelected(selected: any): void {
 		await this.setState({ selectedItem: selected});
         console.warn(this.state.selectedItem.Id);
-        AsyncStorage.setItem("select-Modal", JSON.stringify(this.state.selectedItem.Id));
+        await  AsyncStorage.setItem("select-Modal", JSON.stringify(this.state.selectedItem.Id));
 
 		return selected;
 	}

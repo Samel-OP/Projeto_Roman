@@ -30,10 +30,23 @@ namespace senai.roman.webAPI.Repositories
 
         public List<Projeto> ListarTodos()
         {
-            return ctx.Projetos
-                .Include("IdUsuarioNavigation")
-                .Include(c => c.IdTemaNavigation)
-                .ToList();
+            return ctx.Projetos.Select(p => new Projeto()
+            {
+                NomeProjeto = p.NomeProjeto,
+                IdUsuario = p.IdUsuario,
+                Descricao = p.Descricao,
+                IdUsuarioNavigation = new Usuario()
+                {
+                    Nome = p.IdUsuarioNavigation.Nome,
+                    Email = p.IdUsuarioNavigation.Email,
+                    Senha = p.IdUsuarioNavigation.Senha
+                },
+                IdTemaNavigation = new Tema()
+                {
+                    IdTema = p.IdTemaNavigation.IdTema,
+                    NomeTema = p.IdTemaNavigation.NomeTema
+                }
+            }).ToList();
         }
     }
 }

@@ -45,6 +45,7 @@ export default class Listagem extends Component {
             if (resposta.status == 200) {
                 const dadosProjeto = resposta.data;
                 this.setState({ listaProjetos: dadosProjeto })
+                // console.warn(dadosProjeto);
             }
 
         } catch (error) {
@@ -72,6 +73,7 @@ export default class Listagem extends Component {
             console.warn(resposta.data);
 
             if (resposta.status == 201) {
+                this.buscarProjetos();
                 console.warn("cadastrou!");
             }
         } catch (error) {
@@ -136,11 +138,16 @@ export default class Listagem extends Component {
                     <Text style={styles.btnSugerirText}>Sugerir projeto</Text>
                 </TouchableOpacity>
 
+                <TouchableOpacity
+                    
+                    onPress={() => this.buscarProjetos()}>
+                    <Text style={styles.btnSugerirText}>Atualizar</Text>
+                </TouchableOpacity>
 
                 <View>
                     <FlatList
                         data={this.state.listaProjetos}
-                        keyExtractor={item => item.idProjeto}
+                        keyExtractor={item => item.descricao}
                         renderItem={this.renderItem}
                     />
                 </View>
